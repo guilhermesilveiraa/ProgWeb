@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <meta charset="UTF-8">
+    <head>
+        <title>
+            História do C++
+        </title>
+    </head>
+    <body>
+        <h1>História do C++ </h1>
+        <p>
+            <strong>C++ é uma linguagem de programação de propósito geral</strong> que foi desenvolvida como uma extensão da linguagem C. Por ser uma linguagem orientada a objetos, ela combina recursos de instruções para informar ao computador o que fazer, tornando-a uma das linguagens mais versáteis e poderosas disponíveis atualmente. Sua sintaxe é <emph>poderosa e flexível</emph>, sendo uma escolha popular para muitos projetos
+        </p>
+        <p>
+            O C++ tem suas raízes na linguagem C, que foi desenvolvida no início dos anos 1970 por <i>Dennis Ritchie. Bjarne Stroustrup</i>, um estudante de doutorado da época, viu a oportunidade de melhorar a linguagem C ao adicionar recursos de <strong>programação orientada a objetos</strong>. Assim, em 1983, <i>Stroustrup</i> lançou a primeira versão do C++.
+        </p>
+        <p>Logo do C++: </p>
+        <img src="imageC.png" width="120"
+         alt="C++ Logo">
+        <p>Trecho de código em C++:</p>
+        <pre>
+            double f(double t)
+            {
+                return sqrt(abs(t)) + 5 * pow(t, 3);
+            }
+
+            int main()
+            {
+                double a[11];
+                for (auto& t : a)
+                    std::cin >> t;
+
+                auto iter = a | std::views::enumerate | std::views::reverse;
+                for (const auto [i, t] : iter) {
+                    if (auto y = f(t); y > 400)
+                        std::cout << std::format("{} TOO LARGE\n", i);
+                    else
+                        std::cout << std::format("{} {}\n", i, y);
+                }
+            }
+        </pre>
+
+        <p>
+            O código abaixo usa as tags <strong>sub,small e sup</strong>: <br> 1<sup>2<sup>3<sub>4<sub>5<sup>6</sup></sub></sub></sup></sup>7<sub>8<sup>9</sup></sub>
+
+        </p>
+    </body>
+    
+</html>
+
