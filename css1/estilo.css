@@ -1,0 +1,7 @@
+.texto-com-bordas-arredondadas{
+    border: 10px solid #333;
+    border-radius: 20px 60px 20px 60px;
+    background-color: #d3d3d3;
+    padding: 25px;
+    margin-right: 120px;
+}
