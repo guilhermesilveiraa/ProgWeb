@@ -1,0 +1,10 @@
+.barra {
+    width: 50px;
+    background-color: orangered;
+    margin: 10px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
