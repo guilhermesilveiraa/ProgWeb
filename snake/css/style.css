@@ -1,0 +1,108 @@
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  font-family: 'Press Start 2P', cursive;
+  
+}
+
+#startButton {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+
+}
+
+#startButton:hover {
+  background-color: #45a049;
+}
+
+.fruit-option {
+  margin-bottom: 15px;
+}
+
+.fruit-option label {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.fruit-description {
+  font-size: 10px;
+  color: #555;
+  margin-left: 26px;
+
+}
+
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 24px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Press Start 2P', cursive;
+}
+
+#scoreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc; 
+  max-width: 400px; 
+  margin: 20px 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+
+
+#gameContainer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  background-color:   #cccccc;
+  border: 2px solid black;
+  justify-content: center;
+}
+
+#board td {
+  width: 11px;
+  height: 11px;
+}
+
