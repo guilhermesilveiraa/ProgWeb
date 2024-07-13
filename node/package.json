@@ -4,7 +4,8 @@
   "description": "teste",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sudo docker build -t teste . && sudo docker run -p 3000:3000 teste"
   },
   "author": "",
   "license": "ISC",
