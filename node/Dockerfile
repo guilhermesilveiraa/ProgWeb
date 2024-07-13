@@ -3,5 +3,9 @@ COPY index.js .
 COPY package-lock.json .
 COPY package.json .
 COPY /Exemplo /Exemplo
+
+RUN npm install
+
 EXPOSE 3000
+
 CMD [ "node", "index.js", "Exemplo" ]
