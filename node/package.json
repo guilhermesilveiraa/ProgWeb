@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sudo docker build -t teste . && sudo docker run -p 3000:3000 teste"
+    "start": "npx nodemon index.js /Exemplo/",
+    "start:prod": "sudo docker build -t teste . && sudo docker run -p 3000:3000 teste"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }
