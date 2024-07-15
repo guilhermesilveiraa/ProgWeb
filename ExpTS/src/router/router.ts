@@ -1,5 +1,4 @@
 import {Router, Request, Response} from "express"
-
 const router = Router()
 
 router.get("/hb1", (req, res) =>{
@@ -14,8 +13,22 @@ router.get("/hb2", (req, res) =>{
 
 router.get("/hb3", (req, res) =>{
     res.render("hb3", {layout: false});
-
 });
+
+router.get("/hb4", (req, res) =>{
+    const techs = [
+        { name: 'Express', type: 'Framework', poweredByNodejs: true },
+        { name: 'Laravel', type: 'Framework', poweredByNodejs: false },
+        { name: 'React', type: 'Library', poweredByNodejs: true },
+        { name: 'Handlebars', type: 'Engine View', poweredByNodejs: true },
+        { name: 'Django', type: 'Framework', poweredByNodejs: false },
+        { name: 'Docker', type: 'Virtualization', poweredByNodejs: false },
+        { name: 'Sequelize', type: 'ORM tool', poweredByNodejs: true },
+        ];
+    res.render("hb4", {techs, layout: false});
+});
+
+
 
 router.get("/", (req, res) => {
     res.send("Olá Mundo");
