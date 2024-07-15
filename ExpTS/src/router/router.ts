@@ -2,6 +2,21 @@ import {Router, Request, Response} from "express"
 
 const router = Router()
 
+router.get("/hb1", (req, res) =>{
+    res.render("hb1", {layout: false});
+
+});
+
+router.get("/hb2", (req, res) =>{
+    res.render("hb2", {layout: false});
+
+});
+
+router.get("/hb3", (req, res) =>{
+    res.render("hb3", {layout: false});
+
+});
+
 router.get("/", (req, res) => {
     res.send("Olá Mundo");
 });
