@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
-
+import router from "./router/router";
 import logger from "./middlewares/logger";
 
 dotenv.config();
@@ -11,13 +11,7 @@ const logFormat = process.env.LOG_FORMAT === 'complete' ? 'complete' : 'simple';
 
 app.use(logger(logFormat));
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Olá Mundo");
-});
-
-app.get("/about", (req: Request, res: Response) => {
-    res.send("Página about");
-});
+app.use(router);
 
 app.listen(PORT, () => {
     console.log(`Express app iniciada na porta ${PORT}.`);
