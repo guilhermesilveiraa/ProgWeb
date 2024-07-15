@@ -1,16 +1,25 @@
-import {Router, Request, Response} from "express"
+import {Router, Request, Response} from "express";
+import mainController from '../controllers/main';
 const router = Router()
 
-router.get("/hb1", (req, res) =>{
+
+router.get('/hb1', mainController.hb1);
+router.get('/hb2',mainController.hb2);
+router.get('/hb3', mainController.hb3);
+router.get('/hb4', mainController.hb4);
+router.get('/index', mainController.index);
+router.get('/loremIpsum', mainController.loremIpsum);
+
+
+/*router.get("/hb1", (req, res) =>{
     res.render("hb1", {layout: false});
 
-});
+});*/
 
-router.get("/hb2", (req, res) =>{
+/*router.get("/hb2", (req, res) =>{
     res.render("hb2", {layout: false});
 
 });
-
 router.get("/hb3", (req, res) =>{
     res.render("hb3", {layout: false});
 });
@@ -26,7 +35,7 @@ router.get("/hb4", (req, res) =>{
         { name: 'Sequelize', type: 'ORM tool', poweredByNodejs: true },
         ];
     res.render("hb4", {techs, layout: false});
-});
+});*/
 
 
 
@@ -34,12 +43,12 @@ router.get("/", (req, res) => {
     res.send("Olá Mundo");
 });
 
-router.get("/about", (req, res) => {
+/*router.get("/about", (req, res) => {
     res.send("Página about");
 });
 
 router.get("/loremIpsum", (req, res) =>{
     res.send("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in dapibus magna, sed euismod mi. Cras sed vestibulum dui, ac volutpat arcu. Suspendisse eleifend metus vitae augue vehicula, non molestie ligula finibus. Mauris sit amet tellus gravida, vestibulum enim vel, blandit neque. Proin vitae leo dapibus, dictum ipsum sit amet, pellentesque risus. Aliquam nec ultricies orci. Nam vitae felis vitae nulla porttitor pharetra. Donec pharetra libero vel est pellentesque mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque quis magna ultricies turpis tristique eleifend in sit amet eros. Cras egestas eros ac laoreet volutpat. Praesent purus sapien, egestas at pellentesque et, aliquam id eros");
-});
+});*/
 
 export default router
