@@ -12,10 +12,14 @@ const logFormat = process.env.LOG_FORMAT === 'complete' ? 'complete' : 'simple';
 
 app.engine("handlebars", engine());
 app.engine("handlebars", engine({
+    defaultLayout: 'main',
+    layoutsDir: `${__dirname}/views/layouts/`,
     helpers: require(`${__dirname}/views/helpers/helpers.ts`)
 }));
 
 app.set("view engine", "handlebars");
+app.set("views", `${__dirname}/views`);
+
 app.engine("handlebars", engine({
 helpers: require(`${__dirname}/views/helpers/helpers.ts`)
 }));
