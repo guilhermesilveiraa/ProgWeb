@@ -1,54 +1,39 @@
-import {Router, Request, Response} from "express";
-import mainController from '../controllers/main';
+import { Router } from "express";
+import { checkAuth } from "../middlewares/checkAuth";
+
+import mainController from "../controllers/main";
+import majorController from "../controllers/major";
+import authController from "../controllers/auth";
+
 const router = Router()
 
+//Auth Controller
+router.get("/", authController.login);
+router.get("/auth/signup", authController.signup);
+router.post("/auth/signup", authController.signup);
+router.get("/auth/login", authController.login);
+router.post("/auth/login", authController.login);
+router.post("/auth/logout", authController.logout);
+router.get("/auth/logout", authController.logout);
 
-router.get('/hb1', mainController.hb1);
-router.get('/hb2',mainController.hb2);
-router.get('/hb3', mainController.hb3);
+//Major Controller
+router.get("/major", majorController.index);
+router.get("/major/create",checkAuth, majorController.create);
+router.post("/major/create", majorController.create);
+router.get("/major/read/:id", majorController.read);
+router.get("/major/update/:id", majorController.update);
+router.post("/major/update/:id", majorController.update);
+router.delete("/major/remove/:id", majorController.remove);
+
+
+//Main Controller
+router.get("/create-cookie", mainController.createCookie);
+router.get("/hb1", mainController.hb1);
+router.get("/hb2", mainController.hb2);
+router.get("/hb3", mainController.hb3);
 router.get('/hb4', mainController.hb4);
-router.get('/index', mainController.index);
-router.get('/loremIpsum', mainController.loremIpsum);
+router.get("/bem-vindo/:nome", mainController.bemvindo);
+router.get("/about", mainController.about);
+router.get("/lorem/:numParagraphs", mainController.lorem);
 
-
-/*router.get("/hb1", (req, res) =>{
-    res.render("hb1", {layout: false});
-
-});*/
-
-/*router.get("/hb2", (req, res) =>{
-    res.render("hb2", {layout: false});
-
-});
-router.get("/hb3", (req, res) =>{
-    res.render("hb3", {layout: false});
-});
-
-router.get("/hb4", (req, res) =>{
-    const techs = [
-        { name: 'Express', type: 'Framework', poweredByNodejs: true },
-        { name: 'Laravel', type: 'Framework', poweredByNodejs: false },
-        { name: 'React', type: 'Library', poweredByNodejs: true },
-        { name: 'Handlebars', type: 'Engine View', poweredByNodejs: true },
-        { name: 'Django', type: 'Framework', poweredByNodejs: false },
-        { name: 'Docker', type: 'Virtualization', poweredByNodejs: false },
-        { name: 'Sequelize', type: 'ORM tool', poweredByNodejs: true },
-        ];
-    res.render("hb4", {techs, layout: false});
-});*/
-
-
-
-router.get("/", (req, res) => {
-    res.send("Olá Mundo");
-});
-
-/*router.get("/about", (req, res) => {
-    res.send("Página about");
-});
-
-router.get("/loremIpsum", (req, res) =>{
-    res.send("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in dapibus magna, sed euismod mi. Cras sed vestibulum dui, ac volutpat arcu. Suspendisse eleifend metus vitae augue vehicula, non molestie ligula finibus. Mauris sit amet tellus gravida, vestibulum enim vel, blandit neque. Proin vitae leo dapibus, dictum ipsum sit amet, pellentesque risus. Aliquam nec ultricies orci. Nam vitae felis vitae nulla porttitor pharetra. Donec pharetra libero vel est pellentesque mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque quis magna ultricies turpis tristique eleifend in sit amet eros. Cras egestas eros ac laoreet volutpat. Praesent purus sapien, egestas at pellentesque et, aliquam id eros");
-});*/
-
-export default router
+export default router;

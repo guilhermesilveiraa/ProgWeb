@@ -1,5 +1,5 @@
-export interface Techs {
-    name : string;
-    type : string;
+export interface Technologie {
+    name: string;
+    type: string;
     poweredByNodejs: boolean;
 }
